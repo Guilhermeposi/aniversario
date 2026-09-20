@@ -1,0 +1,690 @@
+/* =========================
+   CONFIGURAÇÃO GERAL
+   ========================= */
+
+body {
+    margin: 0;
+
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #eeeeee;
+}
+    
+
+/* =========================
+   FUNDO DA SURPRESA
+   ========================= */
+
+.pagina-surpresa {
+    background-color: #f5f5f5;
+}
+
+
+/* =========================
+   GIF DE FUNDO
+   ========================= */
+
+.gif-fundo {
+    position: fixed;
+
+    top: 50%;
+    left: 50%;
+
+    width: 100vw;
+    height: 100vh;
+
+    object-fit: contain;
+
+    transform: translate(-50%, -50%);
+
+    z-index: 0;
+
+    pointer-events: none;
+}
+
+
+/* =========================
+   TELA INICIAL
+   ========================= */
+
+.tela-inicial {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100vw;
+    height: 100vh;
+
+    background-color: #f5f5f5;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    z-index: 1000;
+}
+
+
+/* Texto clicável */
+
+#botao-abrir {
+    text-decoration: none;
+
+    color: #d94f70;
+
+    font-size: 40px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    animation: aparecer 2s ease;
+}
+
+
+/* =========================
+   GATOS NORMAIS
+   ========================= */
+
+.gato {
+    position: fixed;
+
+    width: 120px;
+
+    z-index: 1100;
+
+    animation: aparecerGato 1s ease;
+}
+
+
+/* =========================
+   JUMPSCARE
+   ========================= */
+
+.jumpscare {
+    position: fixed;
+
+    left: 50%;
+    top: 50%;
+
+    width: 90vw;
+    max-height: 90vh;
+
+    object-fit: contain;
+
+    z-index: 9999;
+
+    pointer-events: none;
+
+    animation:
+        jumpscare
+        1s
+        ease-out
+        forwards;
+}
+
+
+/* =========================
+   ÁREA PRINCIPAL
+   ========================= */
+
+.surpresa {
+    position: relative;
+
+    width: 900px;
+    height: 650px;
+
+    margin: 0 auto;
+}
+
+
+/* =========================
+   MENSAGEM
+   ========================= */
+
+.mensagem {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    width: 800px;
+
+    text-align: center;
+
+    z-index: 5;
+}
+
+
+.mensagem h1 {
+     margin: 0;
+
+    font-size: 70px;
+
+    line-height: 1.3;
+
+    color: #d94f70;
+
+    text-shadow:
+        0 0 5px rgba(217, 79, 112, 0.3),
+        0 0 15px rgba(217, 79, 112, 0.2);
+
+    animation:
+        aparecerTitulo 1.5s ease,
+        brilhoTitulo 2s ease-in-out infinite alternate;
+}
+
+
+/* =========================
+   CORAÇÕES
+   ========================= */
+
+.coracoes-explosao {
+    position: absolute;
+
+    left: 50%;
+    top: 75%;
+
+    width: 0;
+    height: 0;
+
+    z-index: 6;
+
+    pointer-events: none;
+}
+
+
+.coracoes-explosao span {
+    position: absolute;
+
+    left: 0;
+    top: 0;
+
+    font-size: 35px;
+
+    opacity: 0;
+
+    animation:
+        explosaoCoracao
+        2s
+        ease-out
+        forwards;
+}
+
+
+.coracoes-explosao span:nth-child(1) {
+    --x: -180px;
+    --y: -100px;
+}
+
+.coracoes-explosao span:nth-child(2) {
+    --x: -120px;
+    --y: -150px;
+}
+
+.coracoes-explosao span:nth-child(3) {
+    --x: -60px;
+    --y: -110px;
+}
+
+.coracoes-explosao span:nth-child(4) {
+    --x: 60px;
+    --y: -110px;
+}
+
+.coracoes-explosao span:nth-child(5) {
+    --x: 120px;
+    --y: -150px;
+}
+
+.coracoes-explosao span:nth-child(6) {
+    --x: 180px;
+    --y: -100px;
+}
+
+.coracoes-explosao span:nth-child(7) {
+    --x: -80px;
+    --y: -200px;
+}
+
+.coracoes-explosao span:nth-child(8) {
+    --x: 80px;
+    --y: -200px;
+}
+
+
+/* =========================
+   FOTOS
+   ========================= */
+
+.fotos {
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    top: 0;
+    left: 0;
+
+    z-index: 3;
+}
+
+.foto {
+    position: absolute;
+
+    width: 150px;
+    height: 150px;
+
+    object-fit: cover;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 5px 15px
+        rgba(0, 0, 0, 0.2);
+
+    animation:
+        aparecerFoto
+        1s
+        ease;
+}
+
+.foto1 {
+    top: 20px;
+    left: 250px;
+
+    transform: rotate(-8deg);
+}
+
+.foto2 {
+    top: 30px;
+    right: 250px;
+
+    transform: rotate(8deg);
+}
+
+.foto3 {
+    top: 190px;
+    left: 30px;
+
+    transform: rotate(-6deg);
+}
+
+.foto4 {
+    top: 190px;
+    right: 30px;
+
+    transform: rotate(6deg);
+}
+
+.foto5 {
+    bottom: 190px;
+    left: 40px;
+
+    transform: rotate(6deg);
+}
+
+.foto6 {
+    bottom: 190px;
+    right: 40px;
+
+    transform: rotate(-6deg);
+}
+
+.foto7 {
+    bottom: 30px;
+    left: 250px;
+
+    transform: rotate(8deg);
+}
+
+.foto8 {
+    bottom: 20px;
+    right: 250px;
+
+    transform: rotate(-8deg);
+}
+
+
+/* =========================
+   GATOS DANÇANDO
+   ========================= */
+
+.gato-danca {
+    position: fixed;
+
+    width: 130px;
+
+    z-index: 10;
+}
+
+.gato-superior-esquerdo {
+    top: 10px;
+    left: 10px;
+}
+
+.gato-superior-direito {
+    top: 10px;
+    right: 10px;
+}
+
+.gato-inferior-esquerdo {
+    bottom: 10px;
+    left: 10px;
+}
+
+.gato-inferior-direito {
+    bottom: 10px;
+    right: 10px;
+}
+
+
+/* =========================
+   CONFETES
+   ========================= */
+
+.confete {
+    position: fixed;
+
+    top: 100vh;
+
+    width: 10px;
+    height: 18px;
+
+    z-index: 20;
+
+    animation:
+        confeteSubindo
+        3s
+        linear
+        forwards;
+}
+
+
+/* =========================
+   FLORES DE SAKURA
+   ========================= */
+
+.sakura {
+    position: fixed;
+
+    top: -50px;
+
+    font-size: 25px;
+
+    z-index: 25;
+
+    pointer-events: none;
+
+    animation:
+        sakuraCaindo
+        linear
+        forwards;
+}
+
+
+@keyframes sakuraCaindo {
+
+    0% {
+        transform:
+            translateY(0)
+            rotate(0deg);
+    }
+
+    100% {
+        transform:
+            translateY(110vh)
+            rotate(360deg);
+    }
+
+}
+
+
+/* =========================
+   ANIMAÇÕES
+   ========================= */
+
+@keyframes rainbow {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes aparecerGato {
+    0% {
+        opacity: 0;
+
+        transform:
+            scale(0.5);
+    }
+
+    30% {
+        opacity: 1;
+
+        transform:
+            scale(1);
+    }
+
+    100% {
+        opacity: 0;
+
+        transform:
+            scale(1.1);
+    }
+}
+
+@keyframes jumpscare {
+    0% {
+        opacity: 0;
+
+        transform:
+            translate(-50%, -50%)
+            scale(0.1);
+    }
+
+    15% {
+        opacity: 1;
+
+        transform:
+            translate(-50%, -50%)
+            scale(1.1);
+    }
+
+    30% {
+        transform:
+            translate(-50%, -50%)
+            scale(1);
+    }
+
+    100% {
+        opacity: 0;
+
+        transform:
+            translate(-50%, -50%)
+            scale(1);
+    }
+}
+
+@keyframes aparecerTitulo {
+    from {
+        opacity: 0;
+
+        transform:
+            scale(0.7);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            scale(1);
+    }
+}
+
+@keyframes brilhoTitulo {
+
+    from {
+        text-shadow:
+            0 0 5px rgba(217, 79, 112, 0.2);
+    }
+
+    to {
+        text-shadow:
+            0 0 10px rgba(217, 79, 112, 0.5),
+            0 0 25px rgba(217, 79, 112, 0.3);
+    }
+
+}
+
+@keyframes aparecerFoto {
+    from {
+        opacity: 0;
+
+        transform:
+            scale(0.5);
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes explosaoCoracao {
+    0% {
+        opacity: 0;
+
+        transform:
+            translate(0, 0)
+            scale(0.2);
+    }
+
+    15% {
+        opacity: 1;
+
+        transform:
+            translate(0, 0)
+            scale(1);
+    }
+
+    100% {
+        opacity: 0;
+
+        transform:
+            translate(var(--x), var(--y))
+            scale(0.7);
+    }
+}
+
+@keyframes confeteSubindo {
+    0% {
+        transform:
+            translateY(0)
+            rotate(0deg);
+
+        opacity: 1;
+    }
+
+    100% {
+        transform:
+            translateY(-120vh)
+            rotate(720deg);
+
+        opacity: 0;
+    }
+}
+
+/* =========================
+   CARTA
+   ========================= */
+
+.carta {
+    min-height: 100vh;
+
+    width: 100%;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 100px 0;
+
+    box-sizing: border-box;
+
+    background-color: #f5f5f5;
+}
+
+
+.carta-conteudo {
+    width: 700px;
+
+    padding: 60px;
+
+    box-sizing: border-box;
+
+    background-color: rgba(255, 255, 255, 0.9);
+
+    border-radius: 25px;
+
+    box-shadow:
+        0 10px 40px
+        rgba(0, 0, 0, 0.12);
+
+    text-align: center;
+}
+
+
+.carta-conteudo h2 {
+    margin-top: 0;
+
+    margin-bottom: 40px;
+
+    font-size: 35px;
+
+    color: #d94f70;
+}
+
+
+.carta-conteudo p {
+    font-size: 21px;
+
+    line-height: 1.8;
+
+    color: #555;
+
+    margin: 30px 0;
+}
+
+
+.carta-conteudo .final {
+    margin-top: 50px;
+
+    font-size: 25px;
+
+    color: #d94f70;
+
+    font-weight: bold;
+}
